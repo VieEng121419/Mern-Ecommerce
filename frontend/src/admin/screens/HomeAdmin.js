@@ -50,7 +50,7 @@ export default function HomeAdmin() {
             <li className="nav-item__admin">
               <Link to={`${url}`}>
                 <span className="icon">
-                  <i className="lni lni-alarm" />
+                  <i className="lni lni-apartment" />
                 </span>
                 <span className="text">Trang chủ</span>
               </Link>
@@ -122,7 +122,7 @@ export default function HomeAdmin() {
                 aria-label="Toggle navigation"
               >
                 <span className="icon">
-                  <i className="lni lni-layout" />
+                  <i className="lni lni-users" />
                 </span>
                 <span className="text">Tài khoản </span>
               </a>
@@ -194,9 +194,9 @@ export default function HomeAdmin() {
             <li className="nav-item__admin">
               <a href="notification.html">
                 <span className="icon">
-                  <i className="lni lni-alarm" />
+                  <i className="lni lni-close" />
                 </span>
-                <span className="text">Notifications</span>
+                <span className="text">Thoát</span>
               </a>
             </li>
           </ul>

@@ -432,8 +432,8 @@ h6,
   border-color: #d50100;
 }
 .danger-btn-outline:hover {
-  color: #fff;
-  background: #d50100;
+  color: #d50100;
+  background: transparent;
 }
 
 /* warning buttons */

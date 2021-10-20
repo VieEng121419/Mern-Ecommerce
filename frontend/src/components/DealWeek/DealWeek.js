@@ -6,6 +6,7 @@ export default function DealWeek() {
       <section
         className="deal-of-week set-bg spad"
         data-setbg="assets/img/time-bg.jpg"
+        style={{ backgroundImage: "url(/assets/img/time-bg.jpg)" }}
       >
         <div className="container">
           <div className="col-lg-6 text-center">

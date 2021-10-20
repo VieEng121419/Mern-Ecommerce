@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Switch, useRouteMatch } from "react-router-dom";
-import Form from "../components/form";
+import FormAddCate from "../components/form/formAdd/FormAddCate";
 import ListCate from "../layouts/Categories/ListCate";
 
 export default function CategoryScreen() {
@@ -12,7 +12,7 @@ export default function CategoryScreen() {
           <ListCate />
         </Route>
         <Route path={`${path}/add`}>
-          <Form />
+          <FormAddCate />
         </Route>
       </Switch>
     </div>

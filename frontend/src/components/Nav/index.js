@@ -25,7 +25,6 @@ export default function Nav(props) {
       }
     });
   };
-  useEffect(() => {}, []);
   const role = useSelector((state) => state.user.isAdmin);
   return (
     <div className="nav-item">

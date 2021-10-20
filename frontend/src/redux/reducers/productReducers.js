@@ -10,7 +10,7 @@ const productReducer = (state = _state.productState, action) => {
     case PRODUCTS_LIST: {
       return {
         ...state,
-        products_list: action.payload,
+        products_list: action.payload.reverse(),
       };
     }
     case COLORS_LIST: {

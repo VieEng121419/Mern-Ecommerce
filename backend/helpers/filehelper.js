@@ -1,8 +1,9 @@
+"use strict";
 import multer from "multer";
 
 const storage = multer.diskStorage({
-  destination: (req, res, cb) => {
-    cb(null, "images");
+  destination: (req, file, cb) => {
+    cb(null, "backend/uploads/products");
   },
   filename: (req, file, cb) => {
     cb(
@@ -22,6 +23,5 @@ const filefilter = (req, file, cb) => {
     cb(null, false);
   }
 };
-const upload = multer({ storage: storage, fileFilter: filefilter });
 
-export default upload;
+export const upload = multer({ storage: storage, fileFilter: filefilter });

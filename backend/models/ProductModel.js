@@ -23,21 +23,17 @@ const productSchema = new mongoose.Schema(
     },
     type: {
       type: String,
+      default: "1",
       required: true,
     },
     description: {
       type: String,
-      required: false,
     },
     price: {
       type: Number,
       required: true,
     },
     priceDiscount: {
-      type: Number,
-      required: true,
-    },
-    deleted: {
       type: Number,
       required: true,
     },

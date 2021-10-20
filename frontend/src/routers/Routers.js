@@ -57,11 +57,7 @@ export default function Routers() {
         ></GuardedRoute>
         <GuardedRoute path="/logout" component={LogoutScreen}></GuardedRoute>
         <GuardedRoute exact path="/" component={HomeScreen} />
-        <GuardedRoute
-          path="/product/:id"
-          component={ProductDetailScreen}
-          meta={{ auth: true }}
-        />
+        <GuardedRoute path="/product/:id" component={ProductDetailScreen} />
       </Switch>
     </GuardProvider>
   );

@@ -8,8 +8,10 @@ import sizes from "./routers/sizes.js";
 import colors from "./routers/colors.js";
 import products from "./routers/product.js";
 import path from "path";
+import dotenv from "dotenv";
 import { fileURLToPath } from "url";
 
+dotenv.config();
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
 const PORT = 7000;
@@ -25,7 +27,7 @@ app.use("/api/categories", category);
 app.use("/api/users", users);
 app.use("/api/sizes", sizes);
 app.use("/api/colors", colors);
-app.use("/api/product/images", express.static(path.join(__dirname, "uploads")));
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 mongoose
   .connect(URI, {

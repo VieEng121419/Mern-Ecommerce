@@ -5,7 +5,6 @@ import { ErrorMessage } from "formik";
 InputField.propsTypes = {
   field: PropTypes.object.isRequired,
   form: PropTypes.object.isRequired,
-
   type: PropTypes.string,
   label: PropTypes.string,
   placeholder: PropTypes.string,

@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
+  deleteProducts,
   getColors,
   getProducts,
   getSizes,
@@ -10,9 +11,28 @@ import Table from "../../components/table/ProductTable";
 import { getCategory } from "../../../redux/actions/categoryActions";
 
 export default function ListProducts() {
+  const [deleteItems, setDeleteItems] = useState([]);
   let { url } = useRouteMatch();
   const dispatch = useDispatch();
   const ListProducts = useSelector((state) => state.product.products_list);
+  const checkButtonDelete = () => {
+    if (deleteItems.length > 0) {
+      return (
+        <button
+          className="main-btn danger-btn btn-hover"
+          onClick={() => dispatch(deleteProducts(deleteItems.toString()))}
+        >
+          <i class="fas fa-trash-alt"></i>&ensp;Xóa(đã chọn)
+        </button>
+      );
+    } else {
+      return (
+        <button className="main-btn danger-btn-outline" disabled>
+          <i class="fas fa-trash-alt"></i>&ensp;Xóa(đã chọn)
+        </button>
+      );
+    }
+  };
   useEffect(() => {
     document.title = "Quản lý Sản phẩm";
     dispatch(getProducts());
@@ -56,12 +76,7 @@ export default function ListProducts() {
                     <i class="fas fa-upload"></i>&ensp;Nhập
                   </Link>
                   &nbsp;
-                  <Link
-                    to={`${url}/add`}
-                    className="main-btn danger-btn btn-hover"
-                  >
-                    <i class="fas fa-trash-alt"></i>&ensp;Xóa(đã chọn)
-                  </Link>
+                  {checkButtonDelete()}
                 </nav>
               </div>
             </div>
@@ -70,7 +85,7 @@ export default function ListProducts() {
           {/* end row */}
         </div>
         {/* ========== title-wrapper end ========== */}
-        <Table list={ListProducts} />
+        <Table list={ListProducts} setDeleteItems={setDeleteItems} />
       </div>
       {/* end container */}
     </section>

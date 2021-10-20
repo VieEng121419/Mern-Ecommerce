@@ -1,6 +1,7 @@
 import { UserModel } from "../models/UserModel.js";
 import bcrypt from "bcryptjs";
 import { data } from "../data.js";
+import { generateToken } from "../utils.js";
 
 export const getUsers = async (req, res) => {
   try {
@@ -47,6 +48,7 @@ export const createUser = async (req, res) => {
         role: user.role,
         sex: user.sex,
         address: user.address,
+        token: generateToken(user),
       },
       message: {
         message: "Đăng ký thành công !",
@@ -73,6 +75,7 @@ export const loginUser = async (req, res) => {
             sex: user.sex,
             role: user.role,
             address: user.address,
+            token: generateToken(user),
           },
           message: {
             message: "Đăng nhập thành công !",

@@ -47,6 +47,7 @@ export const register = (data) => async (dispatch) => {
 
 export const login = (data) => async (dispatch) => {
   try {
+    console.log(data);
     const res = await api.post("api/users/login", {
       email: data.email,
       password: data.password,

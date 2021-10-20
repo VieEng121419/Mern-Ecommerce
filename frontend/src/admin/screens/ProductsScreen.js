@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Switch, useRouteMatch } from "react-router-dom";
-import Form from "../components/form/formAdd/FormAddProduct";
+import FormAdd from "../components/form/formAdd/FormAddProduct";
+import FormEdit from "../components/form/formEdit/FormEditProduct";
 import ListProducts from "../layouts/Products/ListProducts";
 
 export default function ProductsAdmin() {
@@ -12,8 +13,9 @@ export default function ProductsAdmin() {
           <ListProducts />
         </Route>
         <Route path={`${path}/add`}>
-          <Form />
+          <FormAdd />
         </Route>
+        <Route path={`${path}/:id`} component={FormEdit} />
       </Switch>
     </div>
   );
